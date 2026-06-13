@@ -1,0 +1,44 @@
+Diagram explaining the agorthim to solve the generation of all possible 
+combination for any given total and denominations.
+
+Example : Denominations =[1,2,3] Total = 4
+Uses Debth First Search Algorithm (DFS)     
+
+                                             123
+                               _____________[4:0]______________
+                              /               |                \
+                             1                2                 3
+[tot-n:n (append n)]       [3:1]             [2:2]            [1:3]
+                        /    |    \             \              -cut-
+                       1     2     3             2         
+                    [2:11]  [1:12] *[0:13]     *[0:22]
+                    /      \  -cut-  
+                    1       2
+               [1:111]    *[0:112]
+                   /
+                   1
+                *[0:1111]
+
+* = a valid combination @ the end of branch to be added to our list of possible 
+combinations of given denominations that add to the given total. 
+
+Rules for building tree search    
+# Previous nodes excluded from childrens list to cut tree search and prevent
+  duplicate combos.
+# If the remaining value < value of the children node, then we exclude that node 
+  from the List of children 
+  
+Note:
+This algorithm uses the DFS therefor the *[soltions] found deeper down the tree 
+on the LHS will appear first. 
+Order explained:
+LHS-depth > LHS upward > RHS-depth> RHS-upward
+
+ref https://www.quora.com/How-do-multiple-recursive-calls-inside-a-loop-unfolds
+
+# mark valid combinations in our tree search diagram above
+The output  
+1111
+112
+13
+22
