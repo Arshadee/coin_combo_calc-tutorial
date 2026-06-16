@@ -48,6 +48,11 @@ Uses Debth First Search Algorithm (DFS)
 \* = Valid combination matching targeted balance.
 
 ---
+### Output: 
+1111
+112
+13
+22
 
 ## 🚀 Performance Optimization Highlights
 
