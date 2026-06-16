@@ -20,10 +20,8 @@ The engine is engineered around the **Strategy Design Pattern**, decoupling clie
 
 The engine leverages highly aggressive structural pruning rules within its Depth-First Search tree to maintain deterministic correctness while preventing mathematical duplication:
 
-1. **Duplicate Combination Prevention**:
-   Branches restrict future child allocations to indices greater than or equal to the parent node's index ($\ge \text{current\_index}$). This successfully cuts symmetric branch iterations and eliminates duplicate permutation sets.
 1. **Duplicate Combination Prevention**: Branches restrict future child allocations to indices greater than or equal to the parent node's index (`>= current_index`). This successfully cuts symmetric branch iterations and eliminates duplicate permutation sets.
-3. **Value Boundary Constraint**:
+2. **Value Boundary Constraint**:
    If the remaining target total balance ($rem$) falls strictly below the scalar value of the candidate denomination node ($rem < \text{den}[i]$), the child branch is pruned instantly to prevent deep invalid leaf execution.
 
 ```
