@@ -49,10 +49,10 @@ Uses Debth First Search Algorithm (DFS)
 
 ---
 ### Output: 
-1111
-112
-13
-22
+1111<br>
+112<br>
+13<br>
+22<br>
 
 ## 🚀 Performance Optimization Highlights
 
