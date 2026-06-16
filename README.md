@@ -26,22 +26,26 @@ The engine leverages highly aggressive structural pruning rules within its Depth
    If the remaining target total balance ($rem$) falls strictly below the scalar value of the candidate denomination node ($rem < \text{den}[i]$), the child branch is pruned instantly to prevent deep invalid leaf execution.
 
 ```
-[1, 2, 3] Total = 4
-_______[4:0]_______
-/         |         \
-1          2          3
-[3:1]      [2:2]      [1:3]
-/     \       |          |
-1       2      2        -Pruned-
-* /      \    |
-1        2 -Pruned-
-[1:111]   [0:112]*
-|
-1
-[0:1111]*
+Example : Denominations =[1,2,3] Total = 4
+Uses Debth First Search Algorithm (DFS)     
+
+                                             123
+                               _____________[4:0]______________
+                              /               |                \
+                             1                2                 3
+[tot-n:n (append n)]       [3:1]             [2:2]            [1:3]
+                        /    |    \             \              -cut-
+                       1     2     3             2         
+                    [2:11]  [1:12] *[0:13]     *[0:22]
+                    /      \  -cut-  
+                    1       2
+               [1:111]    *[0:112]
+                   /
+                   1
+                *[0:1111]
 ```
 
-= Valid combination matching targeted balance.
+* = Valid combination matching targeted balance.
 
 ---
 
