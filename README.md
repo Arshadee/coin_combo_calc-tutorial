@@ -45,7 +45,7 @@ Uses Debth First Search Algorithm (DFS)
                 *[0:1111]
 ```
 
-* = Valid combination matching targeted balance.
+\* = Valid combination matching targeted balance.
 
 ---
 
