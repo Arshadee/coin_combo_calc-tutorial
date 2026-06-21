@@ -2,7 +2,7 @@ Diagram explaining the agorthim to solve the generation of all possible
 combination for any given total and denominations.
 
 Example : Denominations =[1,2,3] Total = 4
-Uses Debth First Search Algorithm (DFS)     
+Using Debth First Search Algorithm (DFS)     
 
                                              123
                                _____________[4:0]______________
